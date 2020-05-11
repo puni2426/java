@@ -1,20 +1,55 @@
-import javax.swing.*;    
-public class TableExample {    
-    JFrame f;    
-    TableExample(){    
-    f=new JFrame();    
-    String data[][]={ {"4AL18CS064","PUNITH","4","CSE","B"},    
-                          {"4AL18CS068","RAMESH","4","CSR","B"},    
-                          {"4AL18CS072","HARIN","4","CSE","B"};    
-    String column[]={"USN","NAME","SEM","BRANCH","SECTION"};         
-    JTable jt=new JTable(data,column);    
-    jt.setBounds(30,40,200,300);          
-    JScrollPane sp=new JScrollPane(jt);    
-    f.add(sp);          
-    f.setSize(300,400);    
-    f.setVisible(true);    
-}     
-public static void main(String[] args) {    
-    new TableExample();    
-}    
-} 
+
+import javax.swing.*;
+import java.awt.*;
+
+
+/*
+<applet code ="Table" width=500 height=500>
+</applet>
+*/
+
+public class Table extends JApplet{
+
+	
+	JFrame jf = new JFrame("TABLE");
+
+	String col[]={"USN","NAME","BRANCH","SEM","SECTION"};
+
+
+	String value[][]={
+		 	 {"4AL18CS072","Harin ","CSE","4th","B"},
+		 	 {"4AL18CS068","Ramesh","CSE","4th","B"},
+             {"4AL18CS082","Sidramesh","CSE","4th","B"}
+			 };
+
+	public void init()
+	{
+		try
+		{
+			SwingUtilities.invokeLater(new Runnable()
+			{
+				public void run()
+				{
+					makeGUI();
+				}
+			}
+			);
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+
+		public void makeGUI()
+		{
+			setLayout(new FlowLayout());
+
+			JTable jt=new JTable(value,col);
+
+			JScrollPane js=new JScrollPane(jt);
+			add(js);
+
+		}
+}
