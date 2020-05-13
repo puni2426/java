@@ -11,7 +11,7 @@ import java.awt.*;
 public class Table extends JApplet{
 
 	
-	JFrame jf = new JFrame("TABLE");
+	
 
 	String col[]={"USN","NAME","BRANCH","SEM","SECTION"};
 
@@ -19,7 +19,7 @@ public class Table extends JApplet{
 	String value[][]={
 		 	 {"4AL18CS072","Harin ","CSE","4th","B"},
 		 	 {"4AL18CS068","Ramesh","CSE","4th","B"},
-             {"4AL18CS082","Sidramesh","CSE","4th","B"}
+                         {"4AL18CS082","Sidramesh","CSE","4th","B"}
 			 };
 
 	public void init()
